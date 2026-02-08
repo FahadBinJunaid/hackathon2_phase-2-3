@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --background: #0a0f1a;
+  --foreground: #e2e8f0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+
+  /* Midnight Slate Scale */
+  --color-slate-950: #0a0f1a;
+  --color-slate-900: #0f172a;
+  --color-slate-800: #1e293b;
+  --color-slate-700: #334155;
+  --color-slate-600: #475569;
+  --color-slate-500: #64748b;
+  --color-slate-400: #94a3b8;
+  --color-slate-300: #cbd5e1;
+  --color-slate-200: #e2e8f0;
+  --color-slate-100: #f1f5f9;
+
+  /* Teal Accent Scale */
+  --color-teal-950: #042f2e;
+  --color-teal-900: #134e4a;
+  --color-teal-800: #115e59;
+  --color-teal-700: #0f766e;
+  --color-teal-600: #0d9488;
+  --color-teal-500: #14b8a6;
+  --color-teal-400: #2dd4bf;
+  --color-teal-300: #5eead4;
+  --color-teal-200: #99f6e4;
+  --color-teal-100: #ccfbf1;
+
+  /* Fonts */
+  --font-sans: var(--font-inter);
+  --font-mono: var(--font-geist-mono);
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-sans), Arial, Helvetica, sans-serif;
+}
+
+/* Glassmorphic Button Utilities */
+@layer components {
+  .btn-glass-primary {
+    @apply bg-teal-500/20 backdrop-blur-md border-2 border-white/30 text-teal-100 font-semibold px-6 py-3 rounded-lg shadow-lg shadow-teal-500/20 hover:bg-teal-500/30 hover:border-white/40 hover:shadow-xl hover:shadow-teal-500/30 hover:scale-105 active:scale-95 transition-all duration-300;
+  }
+
+  .btn-glass-secondary {
+    @apply bg-slate-700/30 backdrop-blur-md border-2 border-white/20 text-slate-200 font-semibold px-6 py-3 rounded-lg shadow-lg shadow-slate-900/30 hover:bg-slate-700/40 hover:border-white/30 hover:shadow-xl hover:shadow-slate-900/40 hover:scale-105 active:scale-95 transition-all duration-300;
+  }
+
+  .btn-glass-danger {
+    @apply bg-red-500/20 backdrop-blur-md border-2 border-white/30 text-red-100 font-semibold px-6 py-3 rounded-lg shadow-lg shadow-red-500/20 hover:bg-red-500/30 hover:border-white/40 hover:shadow-xl hover:shadow-red-500/30 hover:scale-105 active:scale-95 transition-all duration-300;
+  }
+}
+
+/* Custom Animations */
+@keyframes fade-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fade-in 0.5s ease-out forwards;
+}
+
+.animate-slide-up {
+  animation: slide-up 0.6s ease-out forwards;
+}

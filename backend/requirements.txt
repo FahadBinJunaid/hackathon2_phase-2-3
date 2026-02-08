@@ -1,0 +1,9 @@
+sqlmodel
+asyncpg
+python-dotenv
+fastapi
+uvicorn[standard]
+python-jose[cryptography]
+passlib[bcrypt]
+python-multipart
+email-validator

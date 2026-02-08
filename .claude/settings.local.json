@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(.specify/scripts/bash/check-prerequisites.sh:*)",
+      "Bash(python:*)",
+      "Bash(curl -X POST http://localhost:8001/auth/signup -H \"Content-Type: application/json\" -d '{\"\"email\"\":\"\"newuser@example.com\"\",\"\"password\"\":\"\"pass1234\"\"}' -s)",
+      "Bash(curl -X GET http://localhost:8001/docs -s -o /dev/null -w \"Swagger UI Status: %{http_code}\\\\n\")",
+      "Bash(timeout:*)",
+      "Bash(curl -X POST http://localhost:8001/auth/signup -H \"Content-Type: application/json\" -d '{\"\"email\"\":\"\"testuser1@example.com\"\",\"\"password\"\":\"\"securepass123\"\"}' -s)",
+      "Bash(curl -X POST http://localhost:8001/auth/signup -H \"Content-Type: application/json\" -d '{\"\"email\"\":\"\"testuser1@example.com\"\",\"\"password\"\":\"\"anotherpass123\"\"}' -s)",
+      "Bash(curl -X POST http://localhost:8001/auth/login -H \"Content-Type: application/json\" -d '{\"\"email\"\":\"\"testuser1@example.com\"\",\"\"password\"\":\"\"securepass123\"\"}' -s)",
+      "Bash(curl -X POST http://localhost:8001/auth/login -H \"Content-Type: application/json\" -d '{\"\"email\"\":\"\"testuser1@example.com\"\",\"\"password\"\":\"\"wrongpassword\"\"}' -s)",
+      "Bash(curl:*)"
+    ]
+  }
+}
