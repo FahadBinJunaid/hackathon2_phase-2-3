@@ -34,7 +34,7 @@ export default function DashboardPage() {
 
       <div className="space-y-6">
         <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-          <TodoForm onSubmit={createTodo} loading={loading} />
+          <TodoForm onSubmit={async (data) => { await createTodo(data); }} loading={loading} />
         </div>
 
         <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
