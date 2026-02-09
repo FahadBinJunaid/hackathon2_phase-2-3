@@ -13,7 +13,7 @@ import { useEffect, useState } from 'react';
 import MobileMenu from '@/components/MobileMenu';
 
 export default function Navbar() {
-  const { logout, user } = useAuth();
+  const { logout } = useAuth();
   const [isAuth, setIsAuth] = useState(false);
   const [loading, setLoading] = useState(true);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);

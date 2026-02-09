@@ -43,9 +43,9 @@ export default function DashboardPage() {
           ) : (
             <TodoList
               todos={todos}
-              onEdit={updateTodo}
-              onDelete={deleteTodo}
-              onToggleComplete={toggleComplete}
+              onEdit={async (id, data) => { await updateTodo(id, data); }}
+              onDelete={async (id) => { await deleteTodo(id); }}
+              onToggleComplete={async (id) => { await toggleComplete(id); }}
             />
           )}
         </div>
