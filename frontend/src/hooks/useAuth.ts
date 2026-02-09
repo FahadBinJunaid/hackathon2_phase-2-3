@@ -27,6 +27,9 @@ export function useAuth() {
 
       setToken(response.data.access_token);
       toast.success('Account created successfully!');
+
+      // Small delay to ensure cookie is set before redirect
+      await new Promise(resolve => setTimeout(resolve, 100));
       router.push('/dashboard');
     } catch (error: any) {
       const message = extractErrorMessage(error);
@@ -47,6 +50,9 @@ export function useAuth() {
 
       setToken(response.data.access_token);
       toast.success('Logged in successfully!');
+
+      // Small delay to ensure cookie is set before redirect
+      await new Promise(resolve => setTimeout(resolve, 100));
       router.push('/dashboard');
     } catch (error: any) {
       const message = extractErrorMessage(error);
